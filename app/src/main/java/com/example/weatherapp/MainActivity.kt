@@ -1,8 +1,9 @@
 package com.example.weatherapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 
 class MainActivity : AppCompatActivity() {
@@ -20,17 +21,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         findViewById<Button>(R.id.btn_toggle).setOnClickListener {
-            toggleFragment()
+            showToggleDialog()
         }
     }
 
-    private fun toggleFragment() {
-        val fragment: Fragment = if (isBriefView) {
-            DetailedWeatherFragment()
-        } else {
-            BriefWeatherFragment()
-        }
-        isBriefView = !isBriefView
+    private fun showToggleDialog() {
+        val options = arrayOf("Brief View", "Detailed View")
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Choose Weather View")
+            .setItems(options) { _, which ->
+                when (which) {
+                    0 -> replaceFragment(BriefWeatherFragment())
+                    1 -> replaceFragment(DetailedWeatherFragment())
+                }
+            }
+        builder.create().show()
+    }
+
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()

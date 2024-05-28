@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">WeatherApp</string>
+    <string name="app_name">Weather App</string>
+    <string name="menu_language">Switch Language</string>
+    <string name="btn_toggle_label">Toggle Mode</string>
+    <string name="brief_view">Brief View</string>
+    <string name="detailed_view">Detailed View</string>
+    <string name="choose_weather_view">Choose Weather View</string>
+    <string name="temperature">Temperature: 25°C </string>
+    <string name="humidity">Humidity: 60%</string>
+    <string name="wind_speed">Wind Speed: 50 km/h</string>
 </resources>

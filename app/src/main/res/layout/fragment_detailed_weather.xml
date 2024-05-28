@@ -9,20 +9,20 @@
         android:id="@+id/temperature"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Temperature: 25°C"
+        android:text="@string/temperature"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/humidity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Humidity: 60%"
+        android:text="@string/humidity"
         android:textSize="18sp" />
 
     <TextView
         android:id="@+id/windSpeed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Wind Speed: 5 km/h"
+        android:text="@string/wind_speed"
         android:textSize="18sp" />
 </LinearLayout>
